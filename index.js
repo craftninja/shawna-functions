@@ -1,4 +1,4 @@
-const callinIt = (inventory, searchItem) => {
+module.exports = (inventory, searchItem) => {
   for (fabric in inventory) {
     if (fabric === searchItem) {
       if (inventory[fabric] === 0) { return "currently out of stock" }
@@ -7,8 +7,6 @@ const callinIt = (inventory, searchItem) => {
   }
   return "oh shit"
 }
-
-module.exports = callinIt;
 
 // in the parent directory of this repo:
 // $ node
