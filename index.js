@@ -1,16 +1,3 @@
-
-// write a function that takes an array of numbers and compares them to a value and returns xxxxxxx
-
-// inStock? takes an string, and an object that looks kinda like this:
-// {
-//   'Anna Maria Horner something fabric': 12,
-//   'Kona Cotton cerise': 30,
-// }
-// and a string of the fabric someone is looking for, like 'Anna Maria Horner something fabric'
-// returns "12 yards" if in stock,
-// returns "currently out of stock" if 0 yards are available,
-// and "Oh, we haven't carried that before" if it is not in the object.
-
 const callinIt = (inventory, searchItem) => {
   for (fabric in inventory) {
     if (fabric === searchItem) {
@@ -21,15 +8,22 @@ const callinIt = (inventory, searchItem) => {
   return "oh shit"
 }
 
-console.log(callinIt(
-  {
-    'Anna Maria Horner something fabric': 12,
-    'Kona Cotton cerise': 30,
-    'Best fabric evah': 0,
-  },
-  'Anna Maria Horner something fabric'
-  // 'Best fabric evah'
-  // 'bullshit'
-))
+module.exports = callinIt;
 
-// remember to also test for something that does not exist, and something that has 0 yards
+// in the parent directory of this repo:
+// $ node
+// > const callinIt = require('./index.js')
+// > callinIt(
+// ...
+// ... {
+// ...   'Anna Maria Horner something fabric': 12,
+// ...   'Kona Cotton cerise': 30,
+// ...   'Best fabric evah': 0,
+// ... },
+// ... 'Anna Maria Horner something fabric'
+// ... )
+
+
+// can also test for:
+// 'Best fabric evah'
+// 'bullshit'
