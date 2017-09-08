@@ -11,7 +11,7 @@
 // returns "currently out of stock" if 0 yards are available,
 // and "Oh, we haven't carried that before" if it is not in the object.
 
-console.log((function (inventory, searchItem){
+function callinIt(inventory, searchItem){
   for (fabric in inventory) {
     if (fabric === searchItem) {
       if (inventory[fabric] === 0) { return "currently out of stock" }
@@ -19,15 +19,17 @@ console.log((function (inventory, searchItem){
     }
   }
   return "oh shit"
-})(
+}
+
+console.log(callinIt(
   {
     'Anna Maria Horner something fabric': 12,
     'Kona Cotton cerise': 30,
     'Best fabric evah': 0,
   },
-  'Anna Maria Horner something fabric'
+  // 'Anna Maria Horner something fabric'
   // 'Best fabric evah'
-  // 'bullshit'
+  'bullshit'
 ))
 
 // remember to also test for something that does not exist, and something that has 0 yards
